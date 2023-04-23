@@ -8,6 +8,7 @@ Languages used
 **CSS
 **Java
 **SQL
+----------------------------------------------------------------------------------------------------------
 Projenin ER modeli / Project ER model
 ![158988125-3975f6f1-49f8-4379-ab11-9d4bf9532948](https://user-images.githubusercontent.com/64314788/233845572-e507a0ec-09eb-42ee-abb2-e8d121affba0.png)
 Giriş Ekranı / login screen
