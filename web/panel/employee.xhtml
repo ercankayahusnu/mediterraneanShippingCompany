@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <div class="container mt-5" >
+            <h:form>
+                <h:commandButton styleClass="btn btn-outline-warning" action="/adminHome" value="Home"/>
+            </h:form>
+        </div>
+        <hr/>
+        <div class="container mt-5" >
+            <h:form id="employe-form">
+                <div class="mb-3">
+                    <label  class="form-label">Employee ID:</label>
+                    <h:inputText value="#{employeeBean.entity.employee_id}" />
+                    <br></br>
+                    <label  class="form-label">Employee Name:</label>
+                    <h:inputText value="#{employeeBean.entity.employe_name}" />
+                    <br></br>
+                    <label  class="form-label">Date of Birth:</label>
+                    <h:inputText value="#{employeeBean.entity.date_of_birth}" />
+                    <br></br>
+                    <label  class="form-label">Address:</label>
+                    <h:inputText value="#{employeeBean.entity.address}" />
+                    <br></br>
+                    <label  class="form-label">Jop Position:</label>
+                    <h:inputText value="#{employeeBean.entity.jop_position}" />
+                    <br></br>
+                    <label  class="form-label">Phone Number:</label>
+                    <h:inputText value="#{employeeBean.entity.phone_number}" />
+                    <br></br>
+                    <label  class="form-label">Travel Time:</label>
+                    <h:inputText value="#{employeeBean.entity.travel_time}" />
+                    <br></br>
+                    <label  class="form-label">Contract Duration::</label>
+                    <h:inputText value="#{employeeBean.entity.contract_duration}" />
+                    <br></br>
+                    <label  class="form-label">Wage</label>
+                    <h:inputText value="#{employeeBean.entity.wage}" />
+                    <br></br>
+                </div>
+                <div class="mb-3">
+                    <h:commandButton styleClass="btn btn-outline-success" rendered="#{employeeBean.entity.employee_id ==null}" action="#{employeeBean.create}" value="Save" />  
+                    <h:commandButton styleClass="btn btn-outline-info" rendered="#{employeeBean.entity.employee_id !=null}" action="#{employeeBean.update}" value="Update"/>
+                    <h:commandButton styleClass="btn btn-outline-secondary" rendered="#{employeeBean.entity.employee_id !=null}" action="#{employeeBean.clearForm}" value="Clear Form"/>
+                </div>
+                <div class="mb-3">
+                    <h:dataTable styleClass="table table-striped" value="#{employeeBean.list}" var="c" >
+
+                        <h:column>
+                            <f:facet name="header">Employee_id</f:facet>
+                                #{c.employee_id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"> Name</f:facet>
+                            <h:commandLink action="#{employeeBean.setEntity(c)}" value="#{c.employe_name}">
+                                <f:ajax execute="@this" render="employe-form"/>
+                            </h:commandLink>
+
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Date of Birth</f:facet>
+                                #{c.date_of_birth}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Address</f:facet>
+                                #{c.address}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Jop_Position</f:facet>
+                                #{c.jop_position}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Phone_Number</f:facet>
+                                #{c.phone_number}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Travel_Time</f:facet>
+                                #{c.travel_time}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Contract_duration</f:facet>
+                                #{c.contract_duration}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">wage</f:facet>
+                                #{c.wage}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Aplication</f:facet>
+                            <h:commandButton styleClass="btn btn-outline-danger" action="#{employeeBean.delete(c)}" value="Delete" />
+                            
+                        </h:column>
+                    </h:dataTable>
+                </div>
+            </h:form>
+        </div>
+
+    </h:body>
+</html>

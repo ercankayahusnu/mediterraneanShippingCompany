@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <div class="container mt-5" >
+            <h:form>
+                <h:commandButton styleClass="btn btn-light" action="/index" value="Home"/>
+            </h:form>
+        </div>
+        <hr/>
+        <div class="container mt-5" >
+            <h:form>
+                Page #{companyBean.page} of #{companyBean.pageCount} <br/>
+                    <div class="btn-group">                    
+                        <h:commandButton action="#{companyBean.prevois}" value="Previous" styleClass="btn btn-dark"/>
+                        <h:commandButton action="#{companyBean.next}" value="Next" styleClass="btn btn-dark"/>
+                    </div>            
+                <h:dataTable styleClass="table table-striped" value="#{companyBean.list2}" var="c" >
+
+                    <h:column>
+                        <f:facet name="header">Company ID</f:facet>
+                            #{c.company_id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Ship ID</f:facet>
+                            #{c.ship_id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Country ID</f:facet>
+                            #{c.country_id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Company NAME</f:facet>
+                            #{c.company_name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Company ID</f:facet>
+                            #{c.company_type}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Company NAME</f:facet>
+                            #{c.founder}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Year of Foundation</f:facet>
+                            #{c.year_of_foundation}
+                    </h:column>               
+
+                </h:dataTable>
+                <hr />
+            </h:form>
+        </div>
+    </h:body>
+</html>

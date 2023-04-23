@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+
+        <div class="container mt-5" >
+            <h:form>
+                <h:commandButton styleClass="btn btn-outline-warning" action="/adminHome" value="Home"/>
+            </h:form>
+        </div>
+        <hr/>
+        <div class="container mt-5" >
+            <h:form id="brand-form">
+                <div class="mb-3">
+                    <label  class="form-label">Brand id:</label>
+                    <h:inputText  value="#{brandBean.entity.brand_id}" />
+                    <br/>
+
+                    <label  class="form-label">Country id:</label>
+                    <h:selectManyMenu  value="#{brandBean.entity.countryies}" converter="countryBrand">
+                        <f:selectItems  value="#{countryBean.list}" var="c" itemValue="#{c}" itemLabel="#{c.country_name}"/><!-- comment --> 
+                    </h:selectManyMenu>
+
+                    <br/>
+                    <label  class="form-label">Brand Name:</label>
+                    <h:inputText value="#{brandBean.entity.brand_name}" />
+                    <br/>
+                    <label  class="form-label">Contract_Dates:</label>
+                    <h:inputText value="#{brandBean.entity.contract_Dates}" />
+                    <br/>
+                    <label  class="form-label">Contract_Duration:</label>
+                    <h:inputText value="#{brandBean.entity.contract_Duration}" />
+
+                </div>
+                <div class="mb-3">
+                    <h:commandButton styleClass="btn btn-outline-success" rendered="#{brandBean.entity.brand_id==null}" action="#{brandBean.create}" value="Save" />  
+                    <h:commandButton styleClass="btn btn-outline-info" rendered="#{brandBean.entity.brand_id !=null}" action="#{brandBean.update}" value="Update" />  
+                    <h:commandButton styleClass="btn btn-outline-secondary" rendered="#{brandBean.entity.brand_id !=null}" action="#{brandBean.clearForm}" value="Clear Form" />
+                </div>
+                <div class="mb-3">
+                    <h:dataTable styleClass="table table-striped" value="#{brandBean.list}" var="c" >
+
+                        <h:column>
+                            <f:facet name="header">ID</f:facet>
+                                #{c.brand_id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Country ID's</f:facet>
+                            <ul>
+                                <ui:repeat value="#{c.countryies}" var="k">
+                                    <li>#{k.country_name}</li>
+
+                                </ui:repeat>
+                            </ul>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">NAME</f:facet>
+                            <h:commandLink action="#{brandBean.setEntity(c)}" value=" #{c.brand_name}">
+                                <f:ajax execute="@this" render="brand-form"/>
+                            </h:commandLink>
+
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">CONTRACT_DATES</f:facet>
+                                #{c.contract_Dates}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">CONTRACT_DURATION</f:facet>
+                                #{c.contract_Duration}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Aplication</f:facet>
+                            <h:commandButton styleClass="btn btn-outline-danger" action="#{brandBean.delete(c)}" value="Delete" />
+
+                        </h:column>
+
+                    </h:dataTable>
+                </div>
+            </h:form>
+        </div>
+
+    </h:body>
+</html>

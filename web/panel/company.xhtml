@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <div class="container mt-5" >
+            <h:form>
+                <h:commandButton styleClass="btn btn-outline-warning" action="/adminHome" value="Home"/>
+            </h:form>
+        </div>
+        <hr/>
+        <div class="container mt-5" >
+            <h:form id="company-form">
+                <div class="mb-3">
+                    <label  class="form-label">Company id:</label>
+                    <h:inputText value="#{companyBean.entity.company_id}" />
+                    <br></br>
+                    <label  class="form-label">Ship ID:</label>
+                    <h:inputText value="#{companyBean.entity.ship_id}" />
+                    <br></br>
+                    <label  class="form-label">Country id:</label>
+                    <h:inputText value="#{companyBean.entity.country_id}" />
+                    <br></br>
+                    <label  class="form-label">Company Name</label>
+                    <h:inputText value="#{companyBean.entity.company_name}" />
+                    <br></br>
+                    <label  class="form-label">Company type:</label>
+                    <h:inputText value="#{companyBean.entity.company_type}" />
+                    <br></br>
+                    <label  class="form-label">Company Founder:</label>
+                    <h:inputText value="#{companyBean.entity.founder}" />
+                    <br></br>
+                    <label  class="form-label">Year of Foundation:</label>
+                    <h:inputText value="#{companyBean.entity.year_of_foundation}" />
+                    <br></br>
+                </div>
+                <h:commandButton styleClass="btn btn-outline-success" rendered="#{companyBean.entity.company_id==null}"  action="#{companyBean.create}" value="Save" />  
+                <h:commandButton styleClass="btn btn-outline-info" rendered="#{companyBean.entity.company_id!=null}"  action="#{companyBean.update}" value="Update" /> 
+                <h:commandButton styleClass="btn btn-outline-secondary" rendered="#{companyBean.entity.company_id!=null}"  action="#{companyBean.clearForm}" value="Clear Form" />  
+
+                <h:dataTable styleClass="table table-striped" value="#{companyBean.list}" var="c" >
+
+                    <h:column>
+                        <f:facet name="header">Company ID</f:facet>
+                            #{c.company_id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Ship ID</f:facet>
+                            #{c.ship_id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Country ID</f:facet>
+                            #{c.country_id}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Company NAME</f:facet>
+
+                        <h:commandLink action="#{companyBean.setEntity(c)}" value=" #{c.company_name}">
+                            <f:ajax execute="@this" render="company-form"/>
+                        </h:commandLink>
+
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Company ID</f:facet>
+                            #{c.company_type}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Company NAME</f:facet>
+                            #{c.founder}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Year of Foundation</f:facet>
+                            #{c.year_of_foundation}
+                    </h:column>
+
+
+                    <h:column>
+                        <f:facet name="header">Aplication</f:facet>
+                        <h:commandButton styleClass="btn btn-outline-danger" action="#{companyBean.delete(c)}" value="Delete" />
+
+                    </h:column>
+                </h:dataTable>
+                <hr />
+            </h:form>
+        </div>
+    </h:body>
+</html>

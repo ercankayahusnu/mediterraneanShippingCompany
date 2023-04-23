@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <div class="container mt-5" >
+            <h:form>
+                <h:commandButton styleClass="btn btn-outline-warning" action="/adminHome" value="Home"/>
+            </h:form>
+        </div>
+        <hr/>
+        <div class="container mt-5" >
+            <h:form id="ship-form">
+                <div class="mb-3">
+                    <label  class="form-label">Ship id:</label>
+                    <h:inputText value="#{shipBean.entity.ship_id}" />
+                    <br></br>
+
+                    <label  class="form-label">Employee id:</label>
+                    <h:selectOneMenu value="#{shipBean.entity.employee}" converter="employeeShip" >
+                        <f:selectItems value="#{employeeBean.list}" var="c" itemValue="#{c}" itemLabel="#{c.employe_name}"/>
+
+                    </h:selectOneMenu>
+                    <br></br>
+                    <label  class="form-label">Ship Name:</label>
+                    <h:inputText value="#{shipBean.entity.ship_name}" />
+                    <br></br>
+                    <label  class="form-label">Dimension:</label>
+                    <h:inputText value="#{shipBean.entity.dimension}" />
+                    <br></br>
+                    <label  class="form-label">Production date:</label>
+                    <h:inputText value="#{shipBean.entity.production_date}" />
+                    <br></br>
+                    <label  class="form-label">Capacity</label>
+                    <h:inputText value="#{shipBean.entity.capacity}" />
+                    <br></br>
+                </div>
+
+                <div class="mb-3">
+                    <h:commandButton styleClass="btn btn-outline-success" rendered="#{shipBean.entity.ship_id==null}" action="#{shipBean.create}" value="Save" />  
+                    <h:commandButton styleClass="btn btn-outline-info" rendered="#{shipBean.entity.ship_id!=null}" action="#{shipBean.update}" value="Update" />  
+                    <h:commandButton styleClass="btn btn-outline-secondary" rendered="#{shipBean.entity.ship_id!=null}" action="#{shipBean.clearForm}" value="Clear Form" />  
+
+                </div>
+                <div class="mb-3">
+                    <h:dataTable styleClass="table table-striped" value="#{shipBean.list}" var="c" >
+
+                        <h:column>
+                            <f:facet name="header">Ship ID</f:facet>
+                                #{c.ship_id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Employye id</f:facet>
+                                #{c.employee.employe_name}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">NAME</f:facet>
+                            <h:commandLink action="#{shipBean.setEntity(c)}" value="#{c.ship_name}">
+                                <f:ajax execute="@this" render="ship-form"/>
+                            </h:commandLink>
+
+                        </h:column>
+
+
+                        <h:column>
+                            <f:facet name="header">Dimension</f:facet>
+                                #{c.dimension}
+                        </h:column>
+
+
+                        <h:column>
+                            <f:facet name="header">Production_date</f:facet>
+                                #{c.production_date}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Capacity</f:facet>
+                                #{c.capacity}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Aplication</f:facet>
+                            <h:commandButton styleClass="btn btn-outline-danger" action="#{shipBean.delete(c)}" value="Delete" />
+
+                        </h:column>
+
+                    </h:dataTable>
+                </div>
+            </h:form>
+        </div>
+    </h:body>
+</html>

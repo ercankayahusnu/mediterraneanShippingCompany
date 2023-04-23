@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+    </h:head>
+    <h:body>
+        <div class="container mt-5" >
+            <h:form>
+                <nav class="navbar navbar-expand-lg bg-light">
+                    <div class="container-fluid">
+                        <h:commandButton styleClass="btn btn-outline-warning" action="panel/country" value="Country"/>
+                        <h:commandButton styleClass="btn btn-outline-warning" action="panel/company" value="Company"/>
+                        <h:commandButton styleClass="btn btn-outline-warning" action="panel/brand" value="Brand"/>
+                        <h:commandButton styleClass="btn btn-outline-warning" action="panel/employee" value="Employee"/>
+                        <h:commandButton styleClass="btn btn-outline-warning" action="panel/harbor" value="Harbour"/>
+                        <h:commandButton styleClass="btn btn-outline-warning" action="panel/ship" value="Ship"/>
+                        <h:commandButton styleClass="btn btn-outline-info" action="/document/document" value="Documents"/>
+                        <h:commandButton styleClass="btn btn-outline-danger" action="index" value="Cıkış Yap"/>
+                    </div>
+                </nav>
+            </h:form>
+        </div>
+    </h:body>
+</html>

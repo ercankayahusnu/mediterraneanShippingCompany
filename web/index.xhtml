@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Mediterranean Shipping Company</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <style>
+
+
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .b-example-divider {
+                height: 3rem;
+                background-color: rgba(0, 0, 0, .1);
+                border: solid rgba(0, 0, 0, .15);
+                border-width: 1px 0;
+                box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            }
+
+            .b-example-vr {
+                flex-shrink: 0;
+                width: 1.5rem;
+                height: 100vh;
+            }
+
+            .bi {
+                vertical-align: -.125em;
+                fill: currentColor;
+            }
+
+            .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+            }
+
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            .arkaplan{
+                background-image: url(MSC.jpg);
+
+                background-size: cover;
+                background-repeat: no-repeat;
+                min-height: 600px;
+
+            }
+            .colors{
+
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form styleClass="arkaplan">
+
+
+            <div class="fixed-top">
+
+                <div class="container mt-6" >
+                    <h1 class="colors">Mediterranean Shipping Company <img width="50" height="50" src="ship.png"  /></h1>
+                </div>
+
+
+                <div class="container mt-5" >
+                    <h:form>
+
+                        <nav class="navbar navbar-expand-lg bg-opacity-50 bg-light"  >
+                            <div class="container-fluid">
+                                <h:commandButton styleClass="btn btn-outline-info" action="panel_kullanici/country" value="Country"/>
+                                <h:commandButton styleClass="btn btn-outline-info" action="panel_kullanici/company" value="Company"/>
+                                <h:commandButton styleClass="btn btn-outline-info" action="panel_kullanici/brand" value="Brand"/>
+                                <h:commandButton styleClass="btn btn-outline-info" action="panel_kullanici/harbor" value="Harbour"/>
+                                <h:commandButton styleClass="btn btn-outline-info" action="panel_kullanici/ship" value="Ship"/>
+
+
+
+                            </div>
+                        </nav>
+
+                    </h:form>
+
+                </div>
+            </div>
+        </h:form>
+
+
+        <main>
+            <section class="py-5 text-center container">
+                <div class="row py-lg-5">
+                    <font color="#6f83f2" >
+                        <h1 class="fw-light">Bizimki, deniz duyulan gerçek bir tutku, insanlara ve topluluklara olan sarsılmaz bir bağlılık üzerine kurulmuş bir işletmedir</h1></font>
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <h1 class="fw-light">Merhabalar Hoşgeldiniz </h1>
+                        <p class="lead text-muted">Göndermek için neye ihtiyacınız var?</p>
+                        <p class="lead text-muted">MSC, işletmenizin özel ihtiyaçlarına göre tasarlanmış profesyonel, verimli bir hizmet sunar.</p>
+                        <p>
+                            <a href="https://www.msc.com/en/industries" class="btn btn-primary my-2" target="_blank">Bize ulaşın</a>
+
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="album py-5 bg-light">
+                <div class="container"><div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f83f2"/><text x="50%" y="50%" fill="#f7f8fc" dy=".3em">COUNTRY</text></svg>
+
+                        <div class="card-body">
+                            <p class="card-text">Dünyayı birlikte hareket ettiriyoruz. Dünyanın 155 ülkesindeki 500'den fazla yerel ofisten oluşan küresel ağımız, dünyanın büyük ekonomileri ve tüm kıtalardaki gelişmekte olan pazarlar arasında uluslararası ticareti kolaylaştırmamızı sağlıyor.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <small class="text-muted">Anlaştığımız ülkelere bakmak için yukardaki cubuktan Country butonuna tıklayarak bakabilirsiniz</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f83f2"/><text x="50%" y="50%" fill="#f7f8fc" dy=".3em">COMPANY</text></svg>
+
+                        <div class="card-body">
+                            <p class="card-text">Bir çok şirkete hizmet vermekteyiz </p>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <small class="text-muted">Bakmak isterseniz yukardaki cubuktan Company butonuna tıklayarak bakabilirsiniz</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f83f2"/><text x="50%" y="50%" fill="#f7f8fc" dy=".3em">BRAND</text></svg>
+
+                        <div class="card-body">
+                            <p class="card-text">110.000 çalışanımız, yerel topluluklara, müşterilere ve uluslararası iş ortaklarına mal ve hizmet sunmak için müşterilerimizle ortaklaşa çalışır..</p>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <small class="text-muted">Bakmak isterseniz yukardaki cubuktan Company butonuna tıklayarak bakabilirsiniz</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f83f2"/><text x="50%" y="50%" fill="#f7f8fc" dy=".3em">HARBOUR</text></svg>
+
+                        <div class="card-body">
+                            <p class="card-text">Misyonumuz, halkımıza kişisel tatmin ve zenginleşme sağlamaktır. Bilgimizi paylaşmaya, halkımızın profesyonel büyümesini sağlayan eğitim ve destek sunmaya kararlıyız. Uzun vadeli kariyer gelişimi sağlayan, çeşitliliği benimseyen ve tüm kültürlere değer veren adil fırsatlar sağlıyoruz..</p>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <small class="text-muted">Bakmak isterseniz yukardaki cubuktan Harbour butonuna tıklayarak bakabilirsiniz</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f83f2"/><text x="50%" y="50%" fill="#f7f8fc" dy=".3em">SHİP</text></svg>
+
+                        <div class="card-body">
+                            <p class="card-text">Filomuz, yaklaşık 1.4 milyon ton yük taşıma kapasiteli 20 dökme yük gemisi, toplam 635.000 ton taşıma kapasitesine sahip 4 Suezmax Ham Petrol Tankerinden oluşmaktadır..</p>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <small class="text-muted">Bakmak isterseniz yukardaki cubuktan Ship butonuna tıklayarak bakabilirsiniz</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <h:form>
+                <footer class="text-muted py-5">
+                    <div class="container">
+                        <p class="float-end mb-1">
+                            <a href="#">Back to top</a>
+                        </p>
+                        <p class="mb-1" >
+                            <font size="12" color="#6f83f2"><strong>“</strong></font>
+                            <font color="#99bbf2" size="4">Biz, aile ruhu taşıyan bir aile şirketiyiz ve başarımızın anahtarı çalışanlarımızdır </font><font size="4" color="#6f83f2"><strong> ”</strong></font></p>
+
+                    </div>
+                </footer>
+            </h:form>
+
+            <div class="container">
+                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+
+                        </a>
+                        <span class="mb-3 mb-md-0 text-muted">&copy; MSC COMPANY, Inc</span>
+                    </div>
+
+                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                        <li class="ms-3"><a class="text-muted" href="https://twitter.com/MSCCargo" target="_blank"><img width="50" height="50" src="twiter.png"  /></a></li>
+                        <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/msccargo/" target="_blank"><img width="50" height="50" src="instagram.png"  /></a></li>
+                        <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/MSCCargo/" target="_blank"><img width="50" height="50" src="facebook.png"  /></a></li>
+                    </ul>
+                </footer>
+            </div>
+
+        </main>
+
+
+
+
+
+    </h:body>
+</html>

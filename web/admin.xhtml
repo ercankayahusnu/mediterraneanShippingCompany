@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      >
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <style>
+            body{
+                background-image: url(MSC.jpg);
+
+                background-size: cover;
+                background-repeat: no-repeat;
+               
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="container mt-3" >
+            <h1 class="display-1">Mediterranean Shipping Company</h1>
+            <h1 class="display-3">Hoşgeldiniz</h1>
+        </div>
+        <br/>
+
+        <h:form id="form" class="container mt-6">
+            Username:<h:inputText id="uname" value="#{lc.user.username}" required="true" requiredMessage="Bu alan zorunludur !" /><br/>
+            <h:messages for="uname" style="color: red;font-size:10pt "/><br/>
+
+            Password : <h:inputText id="pass" validator="#{testBean.validatePassword}" value="#{lc.user.password}"/><br/>
+            <h:messages for="pass" style="color: red;font-size:10pt "/><br/>
+
+            <h:commandButton styleClass=" btn btn-primary" action="#{lc.login}" value="Giriş Yap" />
+
+        </h:form>
+
+    </h:body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    </h:head>
+    <h:body>
+        <div class="container mt-5" >
+            <h:form>
+                <h:commandButton styleClass="btn btn-outline-warning" action="/adminHome" value="Home"/>
+            </h:form>
+        </div>
+        <hr/>
+        <div class="container mt-5" >
+            <h:form id="country-form">
+                <div class="mb-3">
+                    <label  class="form-label">Country ID:</label>
+                    <h:inputText value="#{countryBean.entity.country_id}" />
+                    <br></br>
+                    <label  class="form-label">Country Name:</label>
+                    <h:inputText value="#{countryBean.entity.country_name}" />
+                    <br></br>
+                </div>
+                <div class="mb-3">
+                    <h:commandButton styleClass="btn btn-outline-success" rendered="#{countryBean.entity.country_id==null}" action="#{countryBean.create}" value="Save" />
+                    <h:commandButton styleClass="btn btn-outline-info" rendered="#{countryBean.entity.country_id!=null}" action="#{countryBean.update}" value="Update" />
+                    <h:commandButton styleClass="btn btn-outline-secondary" rendered="#{countryBean.entity.country_id!=null}" action="#{countryBean.clearForm}" value="Clear Form" />  
+                </div>
+                <div class="mb-3">
+                    <h:dataTable styleClass="table table-striped" value="#{countryBean.list}" var="c" >
+                        <h:column>
+                            <f:facet name="header">ID</f:facet>
+                                #{c.country_id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">NAME</f:facet>
+                            <h:commandLink action="#{countryBean.setEntity(c)}" value="#{c.country_name}">
+                                <f:ajax execute="@this" render="country-form"/>
+                            </h:commandLink>
+
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">Aplication</f:facet>
+                            <h:commandButton styleClass="btn btn-outline-danger" action="#{countryBean.delete(c)}" value="Delete" />
+
+                        </h:column>
+                    </h:dataTable>
+                </div>
+
+            </h:form>
+        </div>
+
+
+    </h:body>
+</html>
