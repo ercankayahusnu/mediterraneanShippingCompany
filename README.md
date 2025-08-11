@@ -1,13 +1,73 @@
-# mediterraneanShippingCompany
-The first web page I developed with my project group Development Tools Used: 
-**PostgreSQL
-**JSF 3.0 
-**Netbeans
-Languages used
-**HTML 
-**CSS
-**Java
-**SQL
+<h2>📌 Proje Özellikleri</h2>
+
+<h3>🛠 Kullanılan Teknolojiler</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Teknoloji</th>
+    <th>Açıklama</th>
+  </tr>
+  <tr>
+    <td>Java EE (JSF 3.0)</td>
+    <td>Web uygulaması geliştirme çatısı</td>
+  </tr>
+  <tr>
+    <td>PrimeFaces</td>
+    <td>JSF için gelişmiş UI kütüphanesi</td>
+  </tr>
+  <tr>
+    <td>PostgreSQL</td>
+    <td>Veritabanı yönetim sistemi</td>
+  </tr>
+  <tr>
+    <td>JDBC</td>
+    <td>Java ile veritabanı bağlantı arayüzü</td>
+  </tr>
+  <tr>
+    <td>HTML & CSS</td>
+    <td>Arayüz tasarımı</td>
+  </tr>
+  <tr>
+    <td>Bootstrap</td>
+    <td>Responsive (mobil uyumlu) tasarım</td>
+  </tr>
+  <tr>
+    <td>AJAX</td>
+    <td>Dinamik veri güncelleme</td>
+  </tr>
+</table>
+
+<h3>🚀 Proje İşlevleri</h3>
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Özellik</th>
+    <th>Açıklama</th>
+  </tr>
+  <tr>
+    <td>Kullanıcı Yönetimi</td>
+    <td>Kayıt, giriş ve oturum yönetimi</td>
+  </tr>
+  <tr>
+    <td>CRUD İşlemleri</td>
+    <td>Veri ekleme, listeleme, güncelleme, silme</td>
+  </tr>
+  <tr>
+    <td>İlişkili Veri Yönetimi</td>
+    <td>İlişkili tablolar üzerinde veri yönetimi</td>
+  </tr>
+  <tr>
+    <td>Dosya Yönetimi</td>
+    <td>Dosya yükleme ve veritabanına kaydetme</td>
+  </tr>
+  <tr>
+    <td>Sayfalama</td>
+    <td>Listeleme işlemlerinde sayfa bölümlendirme</td>
+  </tr>
+  <tr>
+    <td>Şablon Sistemi</td>
+    <td>Basit şablon sistemi ile modüler yapı</td>
+  </tr>
+</table>
+
 ----------------------------------------------------------------------------------------------------------
 Projenin ER modeli / Project ER model
 ![158988125-3975f6f1-49f8-4379-ab11-9d4bf9532948](https://user-images.githubusercontent.com/64314788/233845572-e507a0ec-09eb-42ee-abb2-e8d121affba0.png)
