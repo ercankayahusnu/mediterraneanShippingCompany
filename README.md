@@ -1,6 +1,6 @@
 # mediterraneanShippingCompany
 The first web page I developed with my project group Development Tools Used: 
-**PostgresQL
+**PostgreSQL
 **JSF 3.0 
 **Netbeans
 Languages used
